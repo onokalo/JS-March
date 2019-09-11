@@ -1,0 +1,13 @@
+.table-style{
+    width: 300px;
+    border: 1px solid black;
+}
+
+.th{
+    color: black;
+}
+
+.td-style{
+    padding: 3px;
+    border: 1px solid black;
+}
