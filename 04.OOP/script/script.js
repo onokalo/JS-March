@@ -2,7 +2,7 @@ window.addEventListener("load", Init);
 
 function Init() {
     let url = "https://swapi.co/api/people/";
-    Request(url, GetPerson);
+    // Request(url, GetPerson);
 
     let nextBtn = document.querySelector(".next");//доступ до кнопки некст
     nextBtn.addEventListener("click", Next);
@@ -20,7 +20,7 @@ function Next(){
     console.log("Next", state);
     let newUrl = state.next;
     let newData = state.data;
-    number+=10;
+    number += 10;
     Request(newUrl, newData);
 }
 
@@ -28,7 +28,7 @@ function Prev(){
     console.log("Prev", state);
     let newUrl = state.prev;
     let newData = state.data;
-    number-=10;
+    number -= 10;
     Request(newUrl, newData);
 }
 
@@ -135,6 +135,101 @@ let state = {
     prev: ""
 }
 
+// class Person {
+
+//     constructor(name, surname, age, gender){
+//         this.name = name;
+//         this.surname = surname;
+//         this.age = age;
+//         this.gender = gender;
+//     }
+
+//     ShowPerson() {
+//         console.log("Name: ", this.name, " Surname: ", this.surname, " Age: ", this.age, " Gender: ", this.gender);
+//     }
+
+
+
+//     SayHello(name){
+//         console.log("Hello, my name is ", name);
+//     }
+// }
+
+// let Bill = new Person("Bill", "Smith", 35, "male");
+// Bill.ShowPerson();
+// Bill.SayHello("Bill");
+// Bill.name = 10050;
+// Bill.ShowPerson();
+
+// let Tom = new Person("Tom", "Tomson",23, "male" );
+// Tom.ShowPerson();
+// Tom.SayHello("Tommy");
+
+class Dog {
+    constructor(name, breed, age, power){
+        this.name = name;
+        this.breed = breed;
+        this.age = age;
+        this.power = power
+    }
+    ShowDog (){
+        console.log("Name: ",this.name, " Breed: ",this.breed, " Age: ",this.age, " Power: ",this.power);
+    }
+    SayVoice (name){
+        console.log(name, " say GAV!");
+    }
+    Play (power){
+        if(this.power<=0 || this.power>=100){
+            this.Die();
+        } else {
+            this.power -= power;
+            console.log("Power after play==>",this.power);
+        }
+    }
+    Die (){
+        console.log(this.name, " is die!!!");
+    }
+    Eat (power){
+        if(this.power<=0 || this.power>=100){
+            this.Die();
+        } else {
+            this.power += power;
+            console.log("Power after eat==>",this.power);
+        }
+    }
+}
+
+class HunterDog extends Dog{
+    constructor(name, breed, age, power, speed){
+        super(name, breed, age, power); //викликає батьківський конструктор
+        this.speed = speed;
+
+    }
+    Hunt(power){
+        if(this.power<=0 || this.power>=100){
+            this.Die();
+        } else {
+            this.power -= power;
+            console.log("Power after hunt==>",this.power);
+        }
+    }
+    ShowDog (){
+        console.log("Name: ",this.name, " Breed: ",this.breed, " Age: ",this.age, " Power: ",this.power, " Speed: ",this.speed);
+    }
+}
+
+let Bob = new HunterDog("Bob","taksa",2,60,30);
+Bob.ShowDog();
+Bob.Hunt(70);
+Bob.Hunt(70);
+
+let Charly = new Dog("Charly","labrador",5,50);
+Charly.ShowDog();
+Charly.SayVoice("Charly");
+Charly.Play(40);
+Charly.Eat(10);
+Charly.Play(30);
+Charly.Play(30);
 
 // Test2();
 
