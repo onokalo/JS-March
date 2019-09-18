@@ -14,13 +14,10 @@ function Init() {
     personsBtn.addEventListener("click", reqPeople);
 }
 
-let number = 10;
-
 function Next(){
     console.log("Next", state);
     let newUrl = state.next;
     let newData = state.data;
-    number += 10;
     Request(newUrl, newData);
 }
 
@@ -28,7 +25,6 @@ function Prev(){
     console.log("Prev", state);
     let newUrl = state.prev;
     let newData = state.data;
-    number -= 10;
     Request(newUrl, newData);
 }
 
@@ -68,7 +64,7 @@ function GetPerson(persons) {
     state.prev = persons.previous;
     state.data = GetPerson;
     let countOfPerson = document.querySelector(".count");
-    countOfPerson.textContent = `${number} of ${persons.count}`;
+    countOfPerson.textContent = `10 of ${persons.count}`;
 
     let root = document.querySelector("#root");
     let tbody = document.createElement("tbody");
@@ -102,7 +98,7 @@ function GetPlanet(planets) {
     state.prev = planets.previous;
     state.data = GetPlanet;
     let countOfPlanet = document.querySelector(".count");
-    countOfPlanet.textContent = `${number} of ${planets.count}`;
+    countOfPlanet.textContent = `10 of ${planets.count}`;
 
     let root = document.querySelector("#root");
     let tbody = document.createElement("tbody");
@@ -182,21 +178,22 @@ class Dog {
         if(this.power<=0 || this.power>=100){
             this.Die();
         } else {
-            this.power -= power;
+            this.power-=power;
             console.log("Power after play==>",this.power);
         }
-    }
-    Die (){
-        console.log(this.name, " is die!!!");
     }
     Eat (power){
         if(this.power<=0 || this.power>=100){
             this.Die();
         } else {
-            this.power += power;
+            this.power+=power;
             console.log("Power after eat==>",this.power);
         }
     }
+    Die (name){
+        console.log(name, " is die!!!");
+    }
+
 }
 
 class HunterDog extends Dog{
@@ -209,7 +206,7 @@ class HunterDog extends Dog{
         if(this.power<=0 || this.power>=100){
             this.Die();
         } else {
-            this.power -= power;
+            this.power+=power;
             console.log("Power after hunt==>",this.power);
         }
     }
@@ -220,16 +217,18 @@ class HunterDog extends Dog{
 
 let Bob = new HunterDog("Bob","taksa",2,60,30);
 Bob.ShowDog();
-Bob.Hunt(70);
-Bob.Hunt(70);
 
-let Charly = new Dog("Charly","labrador",5,50);
-Charly.ShowDog();
-Charly.SayVoice("Charly");
-Charly.Play(40);
-Charly.Eat(10);
-Charly.Play(30);
-Charly.Play(30);
+// let Charly = new Dog("Charly","labrador",5,50 );
+// Charly.ShowDog();
+// Charly.SayVoice("Charly");
+// Charly.Play(40);
+// Charly.ShowDog();
+// Charly.Eat(10);
+// Charly.ShowDog();
+// Charly.Die();
+
+
+
 
 // Test2();
 
