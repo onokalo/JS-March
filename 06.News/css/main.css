@@ -1,0 +1,59 @@
+.jasgrid {padding:0;}
+
+.container .row h3 {
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0 #f1e9e9, 2px 2px 0 #4e4a4a;
+    font-weight: bold;
+    border-bottom: 7px double rgba(0, 0, 0, 0.05);
+    margin-bottom: 0.75em;
+}
+
+.box-item {
+    float: left;
+    opacity: 1;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
+    width: 455px;
+}
+
+.box-item img {
+    width: 100%;
+}
+.box-item a,span {color:#FFF;}
+
+.box-item .box-post span.meta {
+    font-family:  sans-serif;
+    font-size: 12px;
+    color: #fff;
+    margin-top: 15px;
+    display: block;
+}
+
+.box-item .box-post span.meta span {
+    margin-right: 15px;
+}
+
+.box-item .box-post {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+    padding: 30px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.box-item .box-post h1.post-title {
+   font-size:10pt;
+   font-weight: bold;
+}
+
+@media (min-width: 1024px) and (max-width: 1440px){
+    .box-item {
+        width: 100%;
+    }
+}

@@ -94,6 +94,10 @@ function create() {
         .then((res) => {
             NewDog = new Dog(name, breed, age, 90);
             NewDog.showDog();
+            let span = document.querySelectorAll("span");
+            for(let i=0; i<span.length; i++){
+                span[i].textContent = "";
+            }
         })
         .catch(err => {
             let newErr = document.querySelector(`.${err.class}`);
