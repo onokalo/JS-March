@@ -1,10 +1,18 @@
 module.exports = class Calc {
 
-    plus(a, b){
+    addition (a, b) {
         return parseInt(a) + parseInt(b);
     }
 
-    minus(a, b){
+    subtraction (a, b){
         return parseInt(a) - parseInt(b);
+    }
+
+    multiplication (a, b){
+        return parseInt(a) * parseInt(b);
+    }
+
+    division (a, b){
+        return parseInt(a) / parseInt(b);
     }
 }

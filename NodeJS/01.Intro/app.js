@@ -27,24 +27,46 @@
 const Calc = require("./modules/calc");
 const argv = process.argv.slice(2);
 // console.log(argv);
+let a;
+let b;
+let calc;
 switch (argv[0]) {
-  case "--plus":
-    console.log("Example: --plus 2 2");
-    let a = argv[1];
-    let b = argv[2];
-    const calculator = new Calc();
-    let res = calculator.plus(a, b);
-    console.log(a, "+", b, "=", res);
+  case "--addition":
+    console.log("--add");
+    a = argv[1];
+    b = argv[2];
+    calc = new Calc();
+    let resadd = calculator.addition(a, b);
+    console.log(a, "+", b, "=", resadd);
     break;
-  case "--minus":
-    console.log("--minus 2 2");
-    let a = argv[1];
-    let b = argv[2];
-    const calculator = new Calc();
-    let res = calculator.minus(a, b);
-    console.log(a, "-", b, "=", res);
+  case "--subtraction":
+    console.log("--subtract");
+    a = argv[1];
+    b = argv[2];
+    calc = new Calc();
+    let ressubtract = calc.subtraction(a, b);
+    console.log(a, "-", b, "=", ressubtract);
     break;
+  
+    case "--multiplication":
+      console.log("--multiply");
+      a = argv[1];
+      b = argv[2];
+      calc = new Calc();
+      let resmultiply = calc.multiplication(a, b);
+      console.log(a, "*", b, "=", resmultiply);
+      break;
+
+      case "--division":
+        console.log("--divide");
+        a = argv[1];
+        b = argv[2];
+        calc = new Calc();
+        let resdivide = calc.division(a, b);
+        console.log(a, "/", b, "=", resdivide);
+        break;
   default:
     console.log("Use --help to get more information");
     break;
 }
+ 
