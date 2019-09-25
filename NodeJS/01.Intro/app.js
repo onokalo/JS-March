@@ -29,39 +29,35 @@ const argv = process.argv.slice(2);
 // console.log(argv);
 let a;
 let b;
-let calc;
+const calc = new Calc();
 switch (argv[0]) {
   case "--addition":
-    console.log("--add");
+    console.log("--addition 2 2");
     a = argv[1];
     b = argv[2];
-    calc = new Calc();
-    let resadd = calculator.addition(a, b);
+    let resadd = calc.addition(a, b);
     console.log(a, "+", b, "=", resadd);
     break;
   case "--subtraction":
-    console.log("--subtract");
+    console.log("--subtraction");
     a = argv[1];
     b = argv[2];
-    calc = new Calc();
     let ressubtract = calc.subtraction(a, b);
     console.log(a, "-", b, "=", ressubtract);
     break;
   
     case "--multiplication":
-      console.log("--multiply");
+      console.log("--multiplication");
       a = argv[1];
       b = argv[2];
-      calc = new Calc();
       let resmultiply = calc.multiplication(a, b);
       console.log(a, "*", b, "=", resmultiply);
       break;
 
       case "--division":
-        console.log("--divide");
+        console.log("--division");
         a = argv[1];
         b = argv[2];
-        calc = new Calc();
         let resdivide = calc.division(a, b);
         console.log(a, "/", b, "=", resdivide);
         break;
