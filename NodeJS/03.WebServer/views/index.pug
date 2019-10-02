@@ -1,0 +1,66 @@
+//- doctype html
+//- head
+//-   meta(charset='UTF-8')
+//-   meta(name='viewport' content='width=device-width, initial-scale=1.0')
+//-   meta(http-equiv='X-UA-Compatible' content='ie=edge')
+//-   link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous')
+//-   link(rel='stylesheet' href='/css/main.css')
+//-   title #{title}
+//- .container
+//-   .row
+//-     .col
+//-       h1 #{h1}
+//-       p.name #{name}
+
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(http-equiv='X-UA-Compatible' content='ie=edge')
+  title #{title} 
+  link(rel='stylesheet' href='../public/css/main.css')
+  link#bootstrap-css(href='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css' rel='stylesheet')
+  link(href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' integrity='sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN' crossorigin='anonymous')
+  // <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+nav.navbar.navbar-expand-md.fixed-top.top-nav
+  .container-fluid
+    a.navbar-brand(href='index.pug')
+      img.logo-light(src='../public/img/logo.png' alt='' width='182' height='54')
+    #navbarSupportedContent.collapse.navbar-collapse
+      ul.navbar-nav.m-auto.text-sm-right.text-md-right
+        li.nav-item
+          a.nav-link(href='#home')
+            | Home 
+            span.sr-only (current)
+        li.nav-item
+          a.nav-link(href='#about') About
+        li.nav-item
+          a.nav-link(href='#contact') Contact
+section#home.intro.intro-bg.bg-overlay.parallax
+  .container
+    .row
+      .col-lg-6.col-md-12.caption-two-panel.ml-auto.pt-5
+        .intro-caption
+          h1.text-white.mb-2 Play &amp; Learn
+          p.text-white.mb-5  Good start for your child.
+section#about.copy-content-sec.sec-bg-02
+  .container
+    .row
+      .col-lg-8.col-md-8
+        img(src='../public/img/home-1.jpg' alt='' width='1025' height='664')
+      .col-lg-4.col-md-4.copy-container.ml-auto
+        .copy-content.pr-4
+          h2.font-abril.text-primary
+            | Who We Are
+          p.lead.ml-2
+            | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            | labore et dolore magna aliqua.
+          p.ml-2
+            | Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            | commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+            | dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            | culpa qui officia deserunt mollit anim id est laborum.
+          p.mt-4.ml-2
+            a.text-primary(href='#') Read More
+script(src='/js/main.js')
