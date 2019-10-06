@@ -4,11 +4,11 @@ const path = require("path");
 
 router.get("/", (req,res) => {
     // console.log(req); //запит який приходить мені
-    res.sendFile(path.join(__dirname, "../" ,"views", "index.pug")); //віддаємо дані
+    // res.sendFile(path.join(__dirname, "../" ,"views", "index.pug")); //віддаємо дані
     res.render("index", {
         title: "Home page",
-        // h1: "Hello pug!",
-        // name: "Bill"
+        h1: "Hello pug!",
+        name: "Bill"
     })
 })
 
